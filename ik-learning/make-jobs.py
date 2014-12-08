@@ -6,10 +6,10 @@ N = 25
 pbs = """
 #!/bin/sh
 
-#PBS -o logs/output/{log}.output
-#PBS -e logs/error/{log}.error
+#PBS -o logs/output/std/{log}.output
+#PBS -e logs/error/std/{log}.error
 
-cd xp/ik-learning
+cd xp/ik-learning/ik-learning
 python ik.py --interest-model {im} --babbling-mode {bab} --sensorimotor-model {sm} --iteration {i}
 
 """
@@ -31,4 +31,4 @@ if __name__ == '__main__':
                     with open('/tmp/ik.pbs', 'w') as f:
                         f.write(pbs.format(log=log, im=im, bab=bab, sm=sm, i=i))
 
-                        call(["qsub", "/tmp/ik.pbs"])
+                    call(["qsub", "/tmp/ik.pbs"])
