@@ -11,7 +11,7 @@ from explauto.agent import Agent
 from explauto import InterestModel
 from explauto.utils import bounds_min_max
 from explauto.experiment import Experiment
-from explauto.sensorimotor_model.imle import ImleModel
+# from explauto.sensorimotor_model.imle import ImleModel
 from explauto.sensorimotor_model.ilo_gmm import IloGmm
 from explauto.environment.environment import Environment
 from explauto.sensorimotor_model.nearest_neighbor import NearestNeighbor
@@ -21,7 +21,7 @@ scene = 'poppy-flying.ttt'
 
 sms = {
     'knn': (NearestNeighbor, {'sigma_ratio': 1. / 16}),
-    'imle': (ImleModel, {}),
+    # 'imle': (ImleModel, {}),
     'ilo-gmm': (IloGmm, {}),
 }
 
@@ -127,4 +127,6 @@ if __name__ == '__main__':
                       args.babbling_mode,
                       args.sensorimotor_model)
 
+    t0 = time.time()
     xp.spawn(log_file, gui=True)
+    print 'Ellapsed time', time.time() - t0
