@@ -37,10 +37,12 @@ conf = {
     's_maxs': array([.5, .5, .5]),
 }
 
-eval_at = [5, 10]#TODO:, 20, 30, 40, 50, 100, 150,
-        #    200, 250, 300, 400, 500, 600, 700, 800, 900, 1000]
+eval_at = [5, 10, 20, 30, 40, 50, 100, 150,
+           200, 250, 300, 400, 500, 600, 700, 800, 900, 1000]
 
-tc = load('tc-25.npy')[:3] # TODO !
+tc = load('tc-25.npy')
+
+avakas = 'AVAKAS' in os.environ
 
 
 class VrepEnvironment(Environment):
@@ -128,5 +130,8 @@ if __name__ == '__main__':
                       args.sensorimotor_model)
 
     t0 = time.time()
-    xp.spawn(log_file, gui=True)
+    if avakas:
+        xp.spawn(log_file, avakas=True)
+    else:
+        xp.spawn(log_file, gui=True)
     print 'Ellapsed time', time.time() - t0
