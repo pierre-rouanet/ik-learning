@@ -6,9 +6,9 @@ N = 25
 pbs = """
 #!/bin/sh
 
-#PBS -o logs/std/{log}.output
-#PBS -e logs/std/{log}.error
-#PBS -l walltime=2:00:0
+#PBS -o logs/grid/std/{log}.output
+#PBS -e logs/grid/std/{log}.error
+#PBS -l walltime=5:00:0
 #PBS -N ik-learning-{im}-{bab}-{sm}-{i}
 
 cd xp/ik-learning/ik-learning
