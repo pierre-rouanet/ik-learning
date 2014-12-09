@@ -5,7 +5,7 @@ pbs = """
 
 #PBS -o tc/std/tc-{i}.output
 #PBS -e tc/std/tc-{i}.error
-#PBS -l walltime=2:00:0
+#PBS -l walltime=1:30:0
 #PBS -N tc-{i}
 
 cd xp/ik-learning/ik-learning
