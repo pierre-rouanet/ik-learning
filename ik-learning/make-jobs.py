@@ -9,6 +9,7 @@ pbs = """
 #PBS -o logs/std/{log}.output
 #PBS -e logs/std/{log}.error
 #PBS -l walltime=2:00:0
+#PBS -N ik-learning-{im}-{bab}-{sm}-{i}
 
 cd xp/ik-learning/ik-learning
 python ik.py --interest-model {im} --babbling-mode {bab} --sensorimotor-model {sm} --iteration {i}
