@@ -1,14 +1,14 @@
 SM = ('knn', 'ilo-gmm', 'imle')
 IM = ('random', 'discretized_progress')
 BABBLING = ('motor', 'goal')
-N = 25
+N = 100
 
 pbs = """
 #!/bin/sh
 
 #PBS -o logs/grid/std/{log}.output
 #PBS -e logs/grid/std/{log}.error
-#PBS -l walltime=4:30:0
+#PBS -l walltime=6:00:0
 #PBS -N ik-learning-{im}-{bab}-{sm}-{i}
 
 cd xp/ik-learning/ik-learning
