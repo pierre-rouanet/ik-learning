@@ -16,7 +16,7 @@ from explauto.sensorimotor_model.ilo_gmm import IloGmm
 from explauto.environment.environment import Environment
 from explauto.sensorimotor_model.nearest_neighbor import NearestNeighbor
 
-log_folder = 'logs/grid'
+log_folder = 'logs/tc'
 scene = 'poppy-flying.ttt'
 
 sms = {
@@ -42,7 +42,8 @@ eval_at = [5, 10, 20, 30, 40, 50, 100, 150,
            200, 250, 300, 400, 500, 600, 700, 800, 900, 1000,
            1250, 1500, 1750, 2000]
 
-tc = load('tc-grid.npy')
+# tc = load('tc-grid.npy')
+tc = load('tc-150.npy')
 # tc = load('tc-grid.npy')[:3]
 
 avakas = 'AVAKAS' in os.environ
