@@ -3,7 +3,7 @@ import os
 xp_conf = {
     'scene': 'poppy-flying.ttt',
 
-    'bab': 'motor',
+    'bab': 'goal',
     'im': {'name': 'random', 'conf': {}},
     'sm': {'name': 'knn', 'conf': {'sigma_ratio': 1 / 6.}},
 
@@ -13,7 +13,7 @@ xp_conf = {
     'tc': 'tc-150.npy',
 
     'log_folder': 'logs/gridsearch',
-    'log': 'random-motor-knn-default-conf',
+    'log': 'random-goal-knn-default-conf',
 }
 
 pbs = """
