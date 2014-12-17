@@ -37,8 +37,6 @@ if __name__ == '__main__':
     with open(conf, 'w') as f:
         f.write(str(xp_conf))
 
-    stop
-
     for i in range(100):
         if avakas:
             with open('/tmp/ik.pbs', 'w') as f:
