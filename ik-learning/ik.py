@@ -77,12 +77,15 @@ class LearningIkXp(VrepXp):
 
         # Create the Interest Model
         im_dims = env.conf.m_dims if self.xp_conf['bab'] == 'motor' else env.conf.s_dims
-        im_cls, _ = interest_models[self.xp_conf['im']['name']]
-        im_conf = self.xp_conf['im']['conf']
+        im_cls, im_conf = interest_models[self.xp_conf['im']['name']]
+        im_conf = im_conf['default']
+        im_conf.update(self.xp_conf['im']['conf'])
+        print 'Create IM', self.xp_conf['im']['name'], 'using', im_conf
         im = im_cls(env.conf, im_dims, **im_conf)
 
         # Create the SensoriMotor Model
         sm_cls = sms[self.xp_conf['sm']['name']]
+        print 'Create SM', self.xp_conf['sm']['name'], 'using', self.xp_conf['sm']['conf']
         sm = sm_cls(env.conf, **self.xp_conf['sm']['conf'])
 
         ag = Agent(env.conf, sm, im)
