@@ -41,7 +41,7 @@ if __name__ == '__main__':
         f.write(str(xp_conf))
 
     for i in range(N):
-        if avakas:
+        if (not args.test) and avakas:
             with open('/tmp/ik.pbs', 'w') as f:
                 f.write(pbs.format(name=xp_name, config=conf, i=i))
 
