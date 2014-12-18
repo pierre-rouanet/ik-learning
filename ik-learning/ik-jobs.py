@@ -36,7 +36,7 @@ if __name__ == '__main__':
         xp_conf['tc'] = 'tc-3.npy'
         N = 2
 
-    conf = '/tmp/xp-{}.conf'.format(xp_name)
+    conf = os.path.join(os.getcwd(), 'tmp', 'xp-{}.conf'.format(xp_name))
     with open(conf, 'w') as f:
         f.write(str(xp_conf))
 
